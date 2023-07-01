@@ -1,0 +1,42 @@
+﻿@model CreateProductVM
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="ProductName"></label>
+        <input asp-for="ProductName" class="form-control form-control-user"
+               placeholder="ProductName">
+        <span asp-validation-for="ProductName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldPrice"></label>
+        <input asp-for="OldPrice" class="form-control form-control-user"
+               placeholder="OldPrice">
+        <span asp-validation-for="OldPrice"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewPrice"></label>
+        <input asp-for="NewPrice" class="form-control form-control-user"
+               placeholder="NewPrice">
+        <span asp-validation-for="NewPrice"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Percentage"></label>
+        <input asp-for="Percentage" class="form-control form-control-user"
+               placeholder="Percentage">
+        <span asp-validation-for="Percentage"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image"></label>
+        <input asp-for="Image" class="form-control form-control-user"
+               placeholder="Image">
+        <span asp-validation-for="Image"></span>
+    </div>
+    <div class="col-lg-4 col-md-6 form-group mt-3">
+        <select class="form-select shadow-none p-0 border-0 form-control-line" asp-for="CatagoryId">
+            @foreach (var item in Model.Catagories)
+            {
+                <option value="@item.Id">@item.CatagoryName</option>
+            }
+        </select>
+    </div>
+    <div class="text-center"><button type="submit">Create Product</button></div>
+</form>

@@ -1,0 +1,76 @@
+﻿<!-- Main -->
+<main class="main">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a asp-controller="Home" asp-action="Index" rel="nofollow"><i class="fas fa-home mr-10"></i> Home</a>
+                <span></span> Cart
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card mb-20">
+                        <div class="card-body">
+                            <div class="shop-cart-box">
+                                <ul class="nav">
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="GetCarts" class="active">
+                                            <i class="feather-shopping-cart"></i> Shopping Cart
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="Address" class="active">
+                                            <i class="feather-map"></i> Address
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="Delivery" class="inactive">
+                                            <i class="feather-truck"></i> Delivery
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="Payment">
+                                            <i class="feather-credit-card"></i> Payment
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="delivery-card">
+                        <div class="delivery-inner">
+                            <div class="custom-radio-button d-flex align-items-center">
+                                <label class="radiobutton-col">
+                                    <img src="assets/img/dhl-img.jpg" class="img-fluid" alt=""> DHL
+                                    <input type="radio" checked="checked" name="dhl" id="DHL" value="DHL">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="delivery-payment">
+                                <p>USD 0.00</p>
+                            </div>
+                        </div>
+                        <div class="delivery-info">
+                            <h5>Delivery within three days</h5>
+                            <p>The parcel is usually delivered within three working days</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="shop-cart">
+                    <div class="shop-cart-btn">
+                        <a asp-controller="Product" asp-action="Payment" class="btn continue-btn">Continue</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- /Main -->

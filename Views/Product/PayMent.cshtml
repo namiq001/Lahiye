@@ -1,0 +1,91 @@
+﻿<!-- Main -->
+<main class="main">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a asp-controller="Home" asp-action="Index" rel="nofollow"><i class="fas fa-home mr-10"></i> Home</a>
+                <span></span> Cart
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card mb-20">
+                        <div class="card-body">
+                            <div class="shop-cart-box">
+                                <ul class="nav">
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="GetCarts" class="active">
+                                            <i class="feather-shopping-cart"></i> Shopping Cart
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="Address" class="active">
+                                            <i class="feather-map"></i> Address
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="Delivery" class="active">
+                                            <i class="feather-truck"></i> Delivery
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="Payment" class="inactive">
+                                            <i class="feather-credit-card"></i> Payment
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="payment-card">
+                        <div class="payment-inner">
+                            <div class="payment-info">
+                                <h5>Payment</h5>
+                                <p>Please choose your payment method</p>
+                            </div>
+                        </div>
+                        <div class="payment-inner mb-0">
+                            <div class="payment-info">
+                                <h5>Paypal</h5>
+                                <p>PayPal - Safe, Secured and Easy to pay online!</p>
+                            </div>
+                            <div class="payment-btn">
+                                <a href="#" class="btn pay-btn-one">Pay with Paypal</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-card border-top-0 mt-0">
+                        <div class="payment-inner mb-0">
+                            <div class="payment-info">
+                                <h5>Stripe</h5>
+                                <p>The new standard in online payments</p>
+                            </div>
+                            <div class="payment-btn">
+                                <a href="#" class="btn pay-btn-two">Pay with Stripe</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-card border-top-0 mt-0">
+                        <div class="payment-inner mb-0">
+                            <div class="payment-info">
+                                <h5>Cash On Delivery</h5>
+                            </div>
+                            <div class="payment-btn">
+                                <a asp-controller="Product" asp-action="GetCarts" class="btn pay-btn-three">Pay with COD</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- /Main -->

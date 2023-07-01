@@ -1,0 +1,10 @@
+﻿@model EditSettingVM
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Value"></label>
+        <input asp-for="Value" class="form-control form-control-user"
+               placeholder="Value">
+        <span asp-validation-for="Value"></span>
+    </div>
+    <div class="text-center"><button type="submit">Edit Setting</button></div>
+</form>

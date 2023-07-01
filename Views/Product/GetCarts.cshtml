@@ -1,0 +1,122 @@
+﻿@using NOOKX_Project.ViewModels.ProductVM;
+@model List<CartVM>
+<!-- Main -->
+<main class="main">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a asp-controller="Home" asp-action="Index" rel="nofollow"><i class="fas fa-home mr-10"></i> Home</a>
+                <span></span> Cart
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card mb-20">
+                        <div class="card-body">
+                            <div class="shop-cart-box">
+                                <ul class="nav">
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="Get carts" class="active">
+                                            <i class="feather-shopping-cart"></i> Shopping Cart
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="Address">
+                                            <i class="feather-map"></i> Address
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="Delivery">
+                                            <i class="feather-truck"></i> Delivery
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="Payment">
+                                            <i class="feather-credit-card"></i> Payment
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-responsive shopping-table">
+                        <table class="table">
+                            <thead>
+                                <tr class="table-head">
+                                    <th>Product</th>
+                                    <th>Product Name</th>
+                                    <th>Quantity</th>
+                                    <th>Catagory Name</th>
+                                    <th>Product Price</th>
+                                    <th>Subtotal</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            @if (Model is null)
+                            {
+                                <tbody> 
+                                </tbody>
+                            }
+                            else
+                            {
+                                <tbody>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr class="table-head">
+                                            <td class="image product-thumbnail">
+                                                <a href="#"><img src="~/assets/img/shop/@item.ImageName" class="img-fluid" alt=""></a>
+                                            </td>
+                                            <td><a href="#">@item.ProductName</a></td>
+                                            <td class="text-center detail-info" data-title="Stock">
+                                                <div class="detail-extralink mr-15">
+                                                    <div class="detail-qty border radius">
+                                                        <span class="qty-val">@item.Count</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>@item.CatagoryName</td>
+                                            <td>USD @item.Price</td>
+                                            <td>@(item.Count * item.Price)</td>
+                                            <td><a asp-controller="Product" asp-action="RemoveCart" asp-route-id="@item.Id" class="table-btn-close"><i class="feather-x-circle"></i></a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            }
+
+                        </table>
+                    </div>
+                </div>
+                <div class="shop-cart">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                            <div class="shop-cart-action">
+                                <a href="address.html" class="btn continue-btn">Continue Shopping</a>
+                                <a href="#" class="btn basket-btn">Empty Basket</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="shop-cart-info">
+                                        <a asp-controller="Product" asp-action="CheckOut" class="btn checkout-btn w-100">Go To Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- /Main -->

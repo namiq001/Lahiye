@@ -1,0 +1,91 @@
+﻿@model Product
+<!-- Main -->
+<main class="main">
+    <div class="container">
+        <div class="page-header breadcrumb-wrap">
+            <div class="breadcrumb">
+                <a asp-controller="home" asp-action="Index" rel="nofollow"><i class="fas fa-home mr-10"></i>Home</a>
+                <span></span> <a href="shop-grid-right.html">  @Model.Catagories.CatagoryName  </a> <span></span> @Model.ProductName
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 m-auto">
+                    <div class="product-detail accordion-detail">
+                        <div class="row mb-50">
+                            <div class="col-md-5 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
+                                <div class="detail-gallery">
+                                    <!-- MAIN SLIDES -->
+                                    <div class="position-relative">
+                                        <div class="product-image-slider">
+                                            <figure class="border-radius-7">
+                                                <img src="~/assets/img/shop/@Model.ProductImageUrl" alt="product image" />
+                                            </figure>
+                                            <figure class="border-radius-7">
+                                                <img src="~/assets/img/shop/@Model.ProductImageUrl" alt="product image" />
+                                            </figure>
+                                            <figure class="border-radius-7">
+                                                <img src="~/assets/img/shop/@Model.ProductImageUrl" alt="product image" />
+                                            </figure>
+                                            <figure class="border-radius-7">
+                                                <img src="~/assets/img/shop/@Model.ProductImageUrl" alt="product image" />
+                                            </figure>
+                                            <figure class="border-radius-7">
+                                                <img src="~/assets/img/shop/@Model.ProductImageUrl" alt="product image" />
+                                            </figure>
+                                        </div>
+                                        <span class="zoom-icon"><i class="feather-maximize-2"></i></span>
+                                    </div>
+                                    <!-- THUMBNAILS -->
+                                    
+                                </div>
+                                <!-- End Gallery -->
+                            </div>
+                            <div class="col-md-7 col-sm-12 col-xs-12">
+                                <div class="detail-info pr-30 pl-30">
+                                    <h4 class="title-detail">@Model.ProductName</h4>
+                                    <div class="clearfix product-price-cover">
+                                        <div class="product-price primary-color float-left">
+                                            <span class="current-price">$ @Model.NewPrice</span>
+                                            <span class="old-price">$ @Model.OldPrice</span>
+                                            <span class="save-price">- @Model.Percentage %</span>
+                                        </div>
+                                    </div>
+                                    <ul class="pro-code">
+                                        <li>Categories : <span class="text-black">@Model.Catagories.CatagoryName</span></li>
+                                    </ul>
+                                    <div class="rating d-inline-block mb-3">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                        <span class="ml-5"> (3.5)</span>
+                                    </div>
+                                    
+                                    <div class="product-extra-link2">
+                                        <a asp-controller="Product" asp-action="AddCart" asp-route-id="@Model.Id" class="button button-add-to-cart me-3"><i class="fi-rs-shopping-cart"></i>Add to cart</a>
+                                        <a aria-label="Add To Wishlist" class="button btn-wishlist" asp-controller="Product" asp-action="AddWishList" asp-route-id="@Model.Id"><i class="fi-rs-heart"></i>Add to wishlist</a>
+                                    </div>
+                                    <div class="pro-share">
+                                        <ul>
+                                            <li class="me-2"><span>Share :</span></li>
+                                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Detail Info -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- /Main -->

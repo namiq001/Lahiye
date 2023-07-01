@@ -1,0 +1,10 @@
+﻿@model EditCatagoryVM
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control form-control-user"
+               placeholder="Name">
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="text-center"><button type="submit">Edit Catagory</button></div>
+</form>

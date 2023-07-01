@@ -1,0 +1,22 @@
+﻿@model CreateSliderVM
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control form-control-user"
+               placeholder="Title">
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control form-control-user"
+               placeholder="Description">
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image"></label>
+        <input asp-for="Image" class="form-control form-control-user"
+               placeholder="Icon String">
+        <span asp-validation-for="Image"></span>
+    </div>
+    <div class="text-center"><button type="submit">Create Slider</button></div>
+</form>

@@ -1,0 +1,62 @@
+﻿@model RegisterVM
+
+
+<!-- Main -->
+<main class="main">
+    <div class="container">
+        <div class="page-header breadcrumb-wrap">
+            <div class="breadcrumb">
+                <a asp-controller="Home" asp-action="Index" rel="nofollow"><i class="fas fa-home mr-10"></i>Home</a>
+                <span></span> Register
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-10 col-md-12 m-auto">
+                    <div class="login-wrap log-sec">
+                        <h4 class="log-title">Create an Account</h4>
+                        <form method="post">
+                            <div class="form-group">
+                                <label asp-for="Name"></label>
+                                <input asp-for="Name" placeholder="Name">
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Surname"></label>
+                                <input asp-for="Surname" placeholder="Surname">
+                                <span asp-validation-for="Surname" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="UserName"></label>
+                                <input asp-for="UserName" placeholder="UserName">
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="EmailAddress"></label>
+                                <input asp-for="EmailAddress" placeholder="Enter Email">
+                                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password"></label>
+                                <input asp-for="Password" placeholder="password">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ConfirmPassword"></label>
+                                <input asp-for="ConfirmPassword" placeholder="Confirm password">
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-brand">Create Account</button>
+                            </div>
+                            <a asp-controller="Account" asp-action="LogIn" class="exist-user">Existing User?</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<

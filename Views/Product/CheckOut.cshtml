@@ -1,0 +1,115 @@
+﻿@using NOOKX_Project.ViewModels.ProductVM;
+@model List<CartVM>
+<!-- Main -->
+<main class="main">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a asp-controller="Home" asp-action="Index" rel="nofollow"><i class="fas fa-home mr-10"></i>Home</a>
+                <span></span> Shop
+                <span></span> Checkout
+            </div>
+        </div>
+    </div>
+    <div class="container mb-80 mt-50">
+        <div class="row">
+            <div class="col-lg-7">
+                
+                <div class="row">
+                    <h4 class="mb-30">Billing Details</h4>
+                    <form method="post">
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <input type="text" required="" name="fname" placeholder="First name *">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <input type="text" required="" name="lname" placeholder="Last name *">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <input type="text" name="billing_address" required="" placeholder="Address *">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <input type="text" name="billing_address2" required="" placeholder="Address line2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <input required="" type="text" name="zipcode" placeholder="Postcode / ZIP *">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <input required="" type="text" name="phone" placeholder="Phone *">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <input required="" type="text" name="cname" placeholder="Company Name">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <input required="" type="text" name="email" placeholder="Email address *">
+                            </div>
+                        </div>
+                        <div class="form-group mb-30">
+                            <textarea rows="5" placeholder="Additional information"></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="border p-20 cart-totals mb-50">
+                    <div class="d-flex align-items-end justify-content-between mb-20">
+                        <h4>Your Order</h4>
+                        <h6 class="text-muted">Subtotal</h6>
+                    </div>
+                    <div class="divider-2 mb-30"></div>
+                    <div class="table-responsive order_table checkout">
+                        <table class="table no-border mb-5">
+                            @if (Model is null)
+                            {
+                                <tbody>
+                                </tbody>
+                            }
+                            else
+                            {
+                                <tbody>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td class="image product-thumbnail"><img src="~/assets/img/shop/@item.ImageName" alt="#"></td>
+                                            <td>
+                                                <h6 class="w-160 mb-5"><a href="#" class="text-heading">@item.ProductName</a></h6>
+                                                <div class="product-rating-info">
+                                                    <div class="product-rate d-inline-block">
+                                                        <div class="product-rating" style="width: 70%;">
+                                                        </div>
+                                                    </div>
+                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6 class="text-muted pl-20 pr-20">x @item.Count</h6>
+                                            </td>
+                                            <td>
+                                                <h4 class="text-brand">@item.Price</h4>
+                                            </td>
+                                            <td>
+                                                @(item.Count * item.Price)
+                                            </td>
+                                        </tr>
+
+                                    }
+                                </tbody>
+
+                            }
+
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</main>
+<!-- /Main -->

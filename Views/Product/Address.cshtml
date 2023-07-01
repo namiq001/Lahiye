@@ -1,0 +1,120 @@
+﻿ <!-- Main -->
+<main class="main">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a asp-controller="Home" asp-action="Index" rel="nofollow"><i class="fas fa-home mr-10"></i> Home</a>
+                <span></span> Cart
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card mb-20">
+                        <div class="card-body">
+                            <div class="shop-cart-box">
+                                <ul class="nav align-items-center">
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="GetCarts" class="active">
+                                            <i class="feather-shopping-cart"></i> <span>Shopping Cart</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="Address" class="inactive">
+                                            <i class="feather-map"></i> <span>Address</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="Delivery">
+                                            <i class="feather-truck"></i> <span>Delivery</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Product" asp-action="Payment">
+                                            <i class="feather-credit-card"></i> <span>Payment</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-responsive shopping-table">
+                        <table class="table">
+                            <thead>
+                                <tr class="table-head">
+                                    <th>Alias</th>
+                                    <th>Address</th>
+                                    <th>Billing Address</th>
+                                    <th>Delivery Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-head">
+                                    <td>Home</td>
+                                    <td>3556 Beech Street, San Francisco, California, CA 94108</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="custom-radio-button">
+                                                <label class="radiobutton-col">
+                                                    <input type="radio" checked="checked" name="workType" id="address1" value="address1">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="custom-radio-button">
+                                                <label class="radiobutton-col">
+                                                    <input type="radio" name="workType" id="address2" value="address2">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="table-head">
+                                    <td>Office</td>
+                                    <td>Aldborough Road, Dagenham, United Kingdom, Zip code - RM10 8AT</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="custom-radio-button">
+                                                <label class="radiobutton-col">
+                                                    <input type="radio" name="onlineAvailable" id="address3" value="address3">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="custom-radio-button">
+                                                <label class="radiobutton-col">
+                                                    <input type="radio" checked="checked" name="onlineAvailable" id="address4" value="address4">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="shop-cart">
+                    <div class="shop-cart-btn">
+                        <a asp-controller="Product" asp-action="Delivery" class="btn continue-btn">Continue</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- /Main -->

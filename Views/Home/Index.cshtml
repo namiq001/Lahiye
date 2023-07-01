@@ -1,0 +1,339 @@
+﻿@using NOOKX_Project.Models;
+@using NOOKX_Project.ViewModels;
+@model HomeVM
+
+@{
+    int count = 0;
+}
+
+<!-- Main -->
+<main class="main">
+    <section class="banner-section position-relative">
+        <div class="container">
+            <div class="banner-slider">
+                <div class="banner-slider-one pagination-square align-pagination-square">
+
+                    @foreach (Slider item in Model.Sliders)
+                    {
+                        <div class="banner-slider-single banner-animation-col">
+                            <div class="row align-items-center">
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="banner-content">
+                                        <h1 class="banner-title mb-40">
+                                            @item.Title
+                                        </h1>
+                                        <p>@item.Description</p>
+                                        <a asp-controller="ProductList" asp-action="Index" class="shop-now">Shop Now</a>
+                                        <span class="border-line"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="single-banner-slider" style="background-image: url(assets/img/slider/@item.SliderImageUrl)"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End hero slider-->
+    <!-- Feature -->
+    <section class="featured section-padding">
+        <div class="container">
+            <div class="row">
+                @foreach (Service item in Model.Services)
+                {
+                    <div class="col-lg-4 col-md-4 d-flex">
+                        <div class="banner-box d-flex flex-fill align-items-center wow animate__animated animate__fadeInUp" data-wow-delay="0">
+                            <div class="banner-icon">
+                                <i class="@item.IconString"></i>
+                            </div>
+                            <div class="banner-text">
+                                <h3>@item.Title</h3>
+                                <p>@item.Description</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+    <!-- Feature -->
+    <!-- Top Products -->
+    <section class="product-tab-section product-section">
+        <div class="container">
+            <div class="section-title wow animate__animated animate__fadeIn">
+                <h3>TOP PRODUCTS</h3>
+            </div>
+            <div class="wow animate__animated animate__fadeIn mb-40">
+                <div class="row justify-content-between">
+                    <div class="col-12 col-lg-10 col-md-10">
+                        <ul class="nav nav-tabs links" id="product-tab-nav" role="tablist">
+                            @foreach (var catagory in Model.Catagories)
+                            {
+                                <li class="nav-item categoryBtn" role="presentation">
+                                    <button class="nav-link" id="nav-tab-one" data-bs-toggle="tab" data-bs-target="#beauty" type="button" role="tab" aria-selected="true">@catagory.CatagoryName</button>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-2 col-md-2 text-end">
+                    </div>
+                </div>
+            </div>
+            <!--End nav-tabs-->
+            <div class="tab-content" id="product-tab-content">
+                <div class="tab-pane fade" id="beauty" role="tabpanel">
+
+                    <div class="row product-grid">
+
+
+                        @foreach (Product item in Model.Products)
+                        {
+                            <div class="col-lg-3 col-md-4 col-12 col-sm-6">
+                                <div class="product-card mb-30">
+                                    <div class="product-img-col">
+                                        <div class="product-img product-img-zoom">
+                                            <a asp-controller="Product" asp-action="ViewProduct" asp-route-id="@item.Id">
+                                                <img src="~/assets/img/shop/@item.ProductImageUrl" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="product-inner-details">
+                                            <a asp-controller="Product" asp-action="ViewProduct" asp-route-id="@item.Id"  class="product-btn"><i class="fi-rs-eye"></i></a>
+                                            <a aria-label="Add To Wishlist" class="product-btn" asp-controller="Product" asp-action="AddWishList" asp-route-id="@item.Id"><i class="fi-rs-heart"></i></a>
+                                            <a asp-controller="Product" asp-action="AddCart" asp-route-id="@item.Id" aria-label="Cart" class="product-btn"><i class="fi-rs-shopping-cart"></i></a>
+                                        </div>
+                                        <div class="product-badge">
+                                            <span class="best">Sale</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h2><a asp-controller="Product" asp-action="ViewProduct" asp-route-id="@item.Id">@item.ProductName</a></h2>
+                                        <div class="product-card-bottom mt-0">
+                                            <div class="product-price">
+                                                <span>$ @item.NewPrice</span>
+                                                <span class="old-price">$ @item.OldPrice</span>
+                                                <span class="discount-tag">-@item.Percentage %</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-card-bottom">
+                                            <div class="rating d-inline-block">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                                <i class="far fa-star"></i>
+                                                <span class="ml-5"> (3.5)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        <!-- Product box -->
+                    </div>
+                </div>
+            </div>
+            <!-- /Product Tab -->
+
+        </div>
+    </section>
+    <!-- /Top Products -->
+    <!-- Category -->
+    <section class="section-category">
+        <div class="container">
+            <div class="section-title wow animate__animated animate__fadeIn" data-wow-delay="0">
+                <h3 class="">POPULAR CATEGORIES</h3>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="category-slider arrow-center position-relative">
+                        <div class="slider-arrow slider-arrow-two carousel-category-arrow" id="carousel-category-arrows"></div>
+                        <div class="carousel-category carousel-arrow-center" id="carousel-category">
+
+                            @foreach (Product item in Model.Products)
+                            {
+                                count++;
+                                if (count > 5)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    <!-- Category Grid -->
+                                    <div class="category-grid wow animate__animated animate__fadeIn" data-wow-delay=".1s">
+                                        <div class="category-img-col">
+                                            <div class="category-img category-img-zoom">
+                                                <a asp-controller="Product" asp-action="ViewProduct" asp-route-id="@item.Id">
+                                                    <img class="default-img" style="width:300px" src="~/assets/img/shop/@item.ProductImageUrl" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="category-content">
+                                            <h4><a asp-controller="Product" asp-action="ViewProduct" asp-route-id="@item.Id">@item.Catagories.CatagoryName</a></h4>
+                                            <p>@item.ProductName</p>
+                                            <a asp-controller="Product" asp-action="ViewProduct" asp-route-id="@item.Id" class="view-more">View More</a>
+                                        </div>
+                                    </div>
+                                    <!-- /Category Grid -->
+                                }
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Category -->
+    <!-- Products -->
+    <section class="feature-products">
+        <div class="container">
+            <div class="section-title wow animate__animated animate__fadeIn" data-wow-delay="0">
+                <h3>FEATURED PRODUCTS</h3>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="feature-product-slider arrow-center position-relative">
+                        <div class="slider-arrow slider-arrow-two carousel-4-columns-arrow" id="carousel-4-columns-arrows"></div>
+                        <div class="carousel-4-columns carousel-arrow-center" id="carousel-4-columns">
+
+                            @foreach (Product item in Model.Products)
+                            {
+
+                                <!-- Product box -->
+                                <div class="product-card wow animate__animated animate__fadeIn" data-wow-delay=".1s">
+                                    <div class="product-img-col">
+                                        <div class="product-img product-img-zoom">
+                                            <a asp-controller="Product" asp-action="ViewProduct" asp-route-id="@item.Id">
+                                                <img class="default-img" src="~/assets/img/shop/@item.ProductImageUrl" alt="">
+                                                <img class="hover-img" src="~/assets/img/shop/@item.ProductImageUrl" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="product-inner-details">
+                                            <a asp-controller="Product" asp-action="ViewProduct" asp-route-id="@item.Id" aria-label="Cart" class="product-btn"><i class="fi-rs-eye"></i></a>
+                                            <a aria-label="Add To Wishlist" class="product-btn" asp-controller="Product" asp-action="AddWishList" asp-route-id="@item.Id"><i class="fi-rs-heart"></i></a>    
+                                            <a asp-controller="Product" asp-action="AddCart" asp-route-id="@item.Id" aria-label="Cart" class="product-btn"><i class="fi-rs-shopping-cart"></i></a>
+                                        </div>
+                                        <div class="product-badge">
+                                            <span class="best">Sale</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h2><a asp-controller="Product" asp-action="ViewProduct" asp-route-id="@item.Id">@item.ProductName</a></h2>
+                                        <div class="product-card-bottom mt-0">
+                                            <div class="product-price">
+                                                <span>$ @item.NewPrice</span>
+                                                <span class="old-price">$ @item.NewPrice</span>
+                                                <span class="discount-tag">- @item.Percentage %</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-card-bottom">
+                                            <div class="rating d-inline-block">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                                <i class="far fa-star"></i>
+                                                <span class="ml-5"> (3.5)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /Product box -->
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Products -->
+    <!-- Products Deals -->
+    <section class="deals-section">
+        <div class="container">
+            <div class="section-title wow animate__animated animate__fadeIn">
+                <h3 class="">TOP DEALS</h3>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-3 d-none d-lg-flex wow animate__animated animate__fadeIn">
+                    <div class="banner-pro">
+                        <img class="img-fluid" src="~/assets/img/shop/27334f32-6817-49fb-8147-d3e31bceec7fBeauty Eyeshadow Highlighter.jpg" alt="">
+                        <div class="banner-text">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-9 col-md-12 wow animate__animated animate__fadeIn" data-wow-delay=".4s">
+                    <div class="deals-slider arrow-center position-relative">
+                        <div class="slider-arrow slider-arrow-two carousel-3-columns-arrow" id="carousel-3-columns-arrows"></div>
+                        <div class="carousel-3-columns carousel-arrow-center" id="carousel-3-columns">
+
+                            @foreach (Product item in Model.Products)
+                            {
+                                count++;
+                                if (count > 15)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+
+                                    <!-- Product box -->
+                                    <div class="product-card wow animate__animated animate__fadeIn" data-wow-delay=".1s">
+                                        <div class="product-img-col">
+                                            <div class="product-img product-img-zoom">
+                                                <a asp-controller="Product" asp-action="ViewProduct" asp-route-id="@item.Id">
+                                                    <img class="default-img" src="~/assets/img/shop/@item.ProductImageUrl" alt="">
+                                                    <img class="hover-img" src="~/assets/img/shop/@item.ProductImageUrl" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="product-inner-details">
+                                                <a asp-controller="Product" asp-action="ViewProduct" asp-route-id="@item.Id" class="product-btn"><i class="fi-rs-eye"></i></a>
+                                                <a aria-label="Add To Wishlist" class="product-btn" asp-controller="Product" asp-action="AddWishList" asp-route-id="@item.Id"><i class="fi-rs-heart"></i></a>
+                                                <a asp-controller="Product" asp-action="AddCart" asp-route-id="@item.Id" aria-label="Cart" class="product-btn"><i class="fi-rs-shopping-cart"></i></a>
+                                            </div>
+                                            <div class="product-badge">
+                                                <span class="best">Sale</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h2><a asp-controller="Product" asp-action="ViewProduct" asp-route-id="@item.Id">@item.ProductName</a></h2>
+                                            <div class="product-card-bottom mt-0">
+                                                <div class="product-price">
+                                                    <span>$ @item.NewPrice</span>
+                                                </div>
+                                            </div>
+                                            <div class="product-card-bottom">
+                                                <div class="rating d-inline-block">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <span class="ml-5"> (3.5)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /Product box -->
+                                }
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Products Deals -->
+    
+
+</main>
+
+<!-- /Main -->

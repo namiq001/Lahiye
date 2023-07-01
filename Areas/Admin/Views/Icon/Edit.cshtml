@@ -1,0 +1,22 @@
+﻿@model EditIconVM
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control form-control-user"
+               placeholder="Title">
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Descrition"></label>
+        <input asp-for="Descrition" class="form-control form-control-user"
+               placeholder="Description">
+        <span asp-validation-for="Descrition"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IconString"></label>
+        <input asp-for="IconString" class="form-control form-control-user"
+               placeholder="Icon String">
+        <span asp-validation-for="IconString"></span>
+    </div>
+    <div class="text-center"><button type="submit">Edit Icon</button></div>
+</form>
