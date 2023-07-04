@@ -18,6 +18,11 @@ public class NookxDbContext : IdentityDbContext<AppUser>
     public DbSet<Setting> Settings { get; set; }
     public DbSet<Slider> Sliders { get; set; }
     public DbSet<MailSetting> MailSettings { get; set; }
+    public DbSet<ProductComment> ProductComments { get; set; }
+    public DbSet<BasketItem> BasketItems { get; set; }
+    public DbSet<CartBasketItem> CartBasketItems { get; set; }
+    public DbSet<CantactIcon> CantactIcons { get; set; }
+    public DbSet<Cantact> Cantacts { get;set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

@@ -7993,6 +7993,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\shop\\6b367cb1-4d45-491b-8271-fd704df4f683M75 Wireless Mouse.jpeg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\ASPNETPROB\\NOOKX_Project\\wwwroot\\assets\\img\\shop\\6f4205ad-04fb-4519-8f26-31783c6d2b34images.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\shop\\6f4205ad-04fb-4519-8f26-31783c6d2b34images.jpeg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\ASPNETPROB\\NOOKX_Project\\wwwroot\\assets\\img\\shop\\78e26396-b28a-4ac7-b0db-8a93fae977d9Light Weight BH 453 Laptop.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\shop\\78e26396-b28a-4ac7-b0db-8a93fae977d9Light Weight BH 453 Laptop.jpeg"
     },
@@ -8145,12 +8149,12 @@
       "PackagePath": "staticwebassets\\assets\\img\\shop\\bd244cad-24ff-493b-bf24-928036157eabBeauty Eyeshadow Highlighter.jpg"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\ASPNETPROB\\NOOKX_Project\\wwwroot\\assets\\img\\shop\\c1a77ba3-b655-4e49-bdc3-45dbe42fa789DS Beauty Rollers.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\shop\\c1a77ba3-b655-4e49-bdc3-45dbe42fa789DS Beauty Rollers.jpg"
+      "Id": "C:\\Users\\user\\Desktop\\ASPNETPROB\\NOOKX_Project\\wwwroot\\assets\\img\\shop\\blush.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\shop\\blush.webp"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\ASPNETPROB\\NOOKX_Project\\wwwroot\\assets\\img\\shop\\caf5218f-ac6e-4da1-b057-42612d3ec028Starawbeery red Lipstick.webp",
-      "PackagePath": "staticwebassets\\assets\\img\\shop\\caf5218f-ac6e-4da1-b057-42612d3ec028Starawbeery red Lipstick.webp"
+      "Id": "C:\\Users\\user\\Desktop\\ASPNETPROB\\NOOKX_Project\\wwwroot\\assets\\img\\shop\\c1a77ba3-b655-4e49-bdc3-45dbe42fa789DS Beauty Rollers.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\shop\\c1a77ba3-b655-4e49-bdc3-45dbe42fa789DS Beauty Rollers.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\ASPNETPROB\\NOOKX_Project\\wwwroot\\assets\\img\\shop\\category-01.jpg",
@@ -8179,6 +8183,14 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\ASPNETPROB\\NOOKX_Project\\wwwroot\\assets\\img\\shop\\ffd21391-44d0-4334-bfa4-493f4a4c9ce4Cotton Tshirt for Women.webp",
       "PackagePath": "staticwebassets\\assets\\img\\shop\\ffd21391-44d0-4334-bfa4-493f4a4c9ce4Cotton Tshirt for Women.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\ASPNETPROB\\NOOKX_Project\\wwwroot\\assets\\img\\shop\\images.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\shop\\images.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\ASPNETPROB\\NOOKX_Project\\wwwroot\\assets\\img\\shop\\lip.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\shop\\lip.jpeg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\ASPNETPROB\\NOOKX_Project\\wwwroot\\assets\\img\\shop\\product-01.png",

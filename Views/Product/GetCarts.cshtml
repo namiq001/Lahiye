@@ -73,7 +73,7 @@
                                     {
                                         <tr class="table-head">
                                             <td class="image product-thumbnail">
-                                                <a href="#"><img src="~/assets/img/shop/@item.ImageName" class="img-fluid" alt=""></a>
+                                                <a asp-controller="Product" asp-action="ViewProduct" asp-route-id="@item.Id"><img src="~/assets/img/shop/@item.ImageName" class="img-fluid" alt=""></a>
                                             </td>
                                             <td><a href="#">@item.ProductName</a></td>
                                             <td class="text-center detail-info" data-title="Stock">
@@ -98,17 +98,11 @@
                 </div>
                 <div class="shop-cart">
                     <div class="row">
-                        <div class="col-lg-8 col-md-6">
-                            <div class="shop-cart-action">
-                                <a href="address.html" class="btn continue-btn">Continue Shopping</a>
-                                <a href="#" class="btn basket-btn">Empty Basket</a>
-                            </div>
-                        </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="shop-cart-info">
-                                        <a asp-controller="Product" asp-action="CheckOut" class="btn checkout-btn w-100">Go To Checkout</a>
+                                        <a asp-controller="Product" asp-action="GetCarts" class="btn checkout-btn w-100">Go To Checkout</a>
                                     </div>
                                 </div>
                             </div>

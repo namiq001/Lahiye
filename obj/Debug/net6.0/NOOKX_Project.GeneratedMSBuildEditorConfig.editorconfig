@@ -16,6 +16,30 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\user\Desktop\ASPNETPROB\NOOKX_Project
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Areas/Admin/Views/CantactMessage/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FudGFjdE1lc3NhZ2VcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Areas/Admin/Views/CantactMessage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FudGFjdE1lc3NhZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Areas/Admin/Views/Cantact/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FudGFjdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Areas/Admin/Views/Cantact/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FudGFjdFxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Areas/Admin/Views/Cantact/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FudGFjdFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Areas/Admin/Views/Cantact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FudGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Areas/Admin/Views/Catagory/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0YWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,6 +78,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Areas/Admin/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Areas/Admin/Views/Product/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Areas/Admin/Views/Product/Edit.cshtml]
@@ -120,6 +148,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -130,6 +162,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Views/Info/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5mb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Views/Order/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/Desktop/ASPNETPROB/NOOKX_Project/Views/Privacy/Index.cshtml]

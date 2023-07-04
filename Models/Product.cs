@@ -13,4 +13,5 @@ public class Product
     public int CatagoryId { get; set; }
     public Catagory Catagories { get; set;}
     public string ProductImageUrl { get; set; } = null!;
+    public List<ProductComment>? ProductComments { get; set; } 
 }

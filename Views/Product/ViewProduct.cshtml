@@ -1,11 +1,17 @@
-﻿@model Product
+﻿@using NOOKX_Project.ViewModels.DetailVM;
+@model ProductDetailVM
+@{
+    int count = 0;
+    int TotalRaiting = 0;
+    int Avarange = 0;
+}
 <!-- Main -->
 <main class="main">
     <div class="container">
         <div class="page-header breadcrumb-wrap">
             <div class="breadcrumb">
                 <a asp-controller="home" asp-action="Index" rel="nofollow"><i class="fas fa-home mr-10"></i>Home</a>
-                <span></span> <a href="shop-grid-right.html">  @Model.Catagories.CatagoryName  </a> <span></span> @Model.ProductName
+                <span></span> <a asp-controller="ProductList" asp-action="Index">  @Model.product.Catagories.CatagoryName  </a> <span></span> @Model.product.ProductName
             </div>
         </div>
     </div>
@@ -21,53 +27,107 @@
                                     <div class="position-relative">
                                         <div class="product-image-slider">
                                             <figure class="border-radius-7">
-                                                <img src="~/assets/img/shop/@Model.ProductImageUrl" alt="product image" />
+                                                <img src="~/assets/img/shop/@Model.product.ProductImageUrl" alt="product image" />
                                             </figure>
                                             <figure class="border-radius-7">
-                                                <img src="~/assets/img/shop/@Model.ProductImageUrl" alt="product image" />
+                                                <img src="~/assets/img/shop/@Model.product.ProductImageUrl" alt="product image" />
                                             </figure>
                                             <figure class="border-radius-7">
-                                                <img src="~/assets/img/shop/@Model.ProductImageUrl" alt="product image" />
+                                                <img src="~/assets/img/shop/@Model.product.ProductImageUrl" alt="product image" />
                                             </figure>
                                             <figure class="border-radius-7">
-                                                <img src="~/assets/img/shop/@Model.ProductImageUrl" alt="product image" />
+                                                <img src="~/assets/img/shop/@Model.product.ProductImageUrl" alt="product image" />
                                             </figure>
                                             <figure class="border-radius-7">
-                                                <img src="~/assets/img/shop/@Model.ProductImageUrl" alt="product image" />
+                                                <img src="~/assets/img/shop/@Model.product.ProductImageUrl" alt="product image" />
                                             </figure>
                                         </div>
                                         <span class="zoom-icon"><i class="feather-maximize-2"></i></span>
                                     </div>
                                     <!-- THUMBNAILS -->
-                                    
+
                                 </div>
                                 <!-- End Gallery -->
                             </div>
                             <div class="col-md-7 col-sm-12 col-xs-12">
                                 <div class="detail-info pr-30 pl-30">
-                                    <h4 class="title-detail">@Model.ProductName</h4>
+                                    <h4 class="title-detail">@Model.product.ProductName</h4>
                                     <div class="clearfix product-price-cover">
                                         <div class="product-price primary-color float-left">
-                                            <span class="current-price">$ @Model.NewPrice</span>
-                                            <span class="old-price">$ @Model.OldPrice</span>
-                                            <span class="save-price">- @Model.Percentage %</span>
+                                            <span class="current-price">$ @Model.product.NewPrice</span>
+                                            <span class="old-price">$ @Model.product.OldPrice</span>
+                                            <span class="save-price">- @Model.product.Percentage %</span>
                                         </div>
                                     </div>
                                     <ul class="pro-code">
-                                        <li>Categories : <span class="text-black">@Model.Catagories.CatagoryName</span></li>
+                                        <li>Categories : <span class="text-black">@Model.product.Catagories.CatagoryName</span></li>
                                     </ul>
                                     <div class="rating d-inline-block mb-3">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <i class="far fa-star"></i>
-                                        <span class="ml-5"> (3.5)</span>
+
+                                        @if (Model.product.ProductComments is null)
+                                        {
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+
+                                        }
+                                        else
+                                        {
+                                            @foreach (ProductComment item in Model.product.ProductComments)
+                                            {
+                                                TotalRaiting += item.Rating;
+                                                count++;
+                                            }
+
+
+                                            Avarange = (int)Math.Ceiling((double)TotalRaiting / count);
+
+
+                                            for(int i = 0; i<Avarange;i++)
+                                            {
+                                                <i class="fas fa-star"></i>
+                                            }
+                                            for(int i=0; i<(5-Avarange);i++)
+                                            {
+                                                <i class="far fa-star"></i>
+                                            }
+                                        }
+
+
+                                        <span class="ml-5">
+
+                                            @if (Model.product.ProductComments is null)
+                                            {
+                                                <span>0</span>
+
+                                            }
+                                            else
+                                            {
+                                                @foreach (ProductComment item in Model.product.ProductComments)
+                                                {
+                                                    TotalRaiting += item.Rating;
+                                                    count++;
+                                                }
+
+                                                
+                                                    Avarange = (int)Math.Ceiling((double)TotalRaiting / count);
+                                                
+                                                
+
+                                                @Avarange
+                                            }
+
+
+
+
+                                        </span>
                                     </div>
-                                    
+
                                     <div class="product-extra-link2">
-                                        <a asp-controller="Product" asp-action="AddCart" asp-route-id="@Model.Id" class="button button-add-to-cart me-3"><i class="fi-rs-shopping-cart"></i>Add to cart</a>
-                                        <a aria-label="Add To Wishlist" class="button btn-wishlist" asp-controller="Product" asp-action="AddWishList" asp-route-id="@Model.Id"><i class="fi-rs-heart"></i>Add to wishlist</a>
+                                        <a asp-controller="Product" asp-action="AddCart" asp-route-id="@Model.product.Id" class="button button-add-to-cart me-3"><i class="fi-rs-shopping-cart"></i>Add to cart</a>
+                                        <a aria-label="Add To Wishlist" class="button btn-wishlist" asp-controller="Product" asp-action="AddWishList" asp-route-id="@Model.product.Id"><i class="fi-rs-heart"></i>Add to wishlist</a>
                                     </div>
                                     <div class="pro-share">
                                         <ul>
@@ -78,6 +138,38 @@
                                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                         </ul>
                                     </div>
+                                </div>
+                                <div class="comment-form-wrap pt-5">
+                                    <h3 class="mb-5">Leave a comment</h3>
+                                    <form asp-action="ProductComment" asp-controller="product" method="post" class="p-5 bg-light">
+
+                                        <div class="form-group">
+                                            <label asp-for="productComment.Rating">Your rating:</label>
+                                            <select asp-for="productComment.Rating">
+                                                <option value="5">5/5</option>
+                                                <option value="4">4/5</option>
+                                                <option value="3">3/5</option>
+                                                <option value="2">2/5</option>
+                                                <option value="1">1/5</option>
+                                            </select>
+                                            <span asp-validation-for="productComment.Rating" class="text-danger"></span>
+                                        </div>
+                                        <input type="hidden" asp-for="productComment.ProductId" value="@Model.product.Id" />
+                                        <input type="hidden" asp-for="productComment.AppUserId" value="@Model.product.Id" />
+
+                                        <div class="form-group">
+                                            @if (User.Identity.IsAuthenticated)
+                                            {
+
+                                                <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+                                            }
+                                            else
+                                            {
+                                                <a asp-action="login" asp-controller="account" class="btn py-3 px-4 btn-primary send-comment">Login to write a comment</a>
+                                            }
+                                        </div>
+
+                                    </form>
                                 </div>
                                 <!-- Detail Info -->
                             </div>

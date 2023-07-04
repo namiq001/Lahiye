@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using NOOKX_Project.Models;
 using NOOKX_Project.NOOKXDataBase;
 using NOOKX_Project.ViewModels.CatagotyVM;
+using NOOKX_Project.ViewModels.DashBoardVM;
 using NOOKX_Project.ViewModels.IconVM;
 using System.Data;
 
@@ -24,7 +25,13 @@ public class CatagoryController : Controller
     public async Task<IActionResult> Index()
     {
         List<Catagory> catagories = await _context.Catagories.ToListAsync();
-        return View(catagories);
+        List<Cantact> cantacts = await _context.Cantacts.ToListAsync();
+        DashVM dashVM = new DashVM
+        {
+            Catagories = catagories,
+            Cantacts = cantacts,
+        };
+        return View(dashVM);
     }
     public IActionResult Create()
     {

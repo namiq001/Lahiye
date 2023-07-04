@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NOOKX_Project.Models;
 using NOOKX_Project.NOOKXDataBase;
+using NOOKX_Project.ViewModels.DashBoardVM;
 using NOOKX_Project.ViewModels.IconVM;
 using System.Data;
 
@@ -23,8 +24,14 @@ public class IconController : Controller
 
     public async Task<IActionResult> Index()
     {
+        List<Cantact> cantacts = await _context.Cantacts.ToListAsync();
         List<Service> services = await _context.Services.ToListAsync();
-        return View(services);
+        DashVM dashVM = new DashVM
+        {
+            Cantacts = cantacts,
+            Services = services
+        };
+        return View(dashVM);
     }
     [HttpGet]
     public IActionResult Create()

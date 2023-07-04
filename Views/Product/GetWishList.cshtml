@@ -86,7 +86,7 @@
                                                 <div class="card mb-25">
                                                     <div class="card-body">
                                                         <div class="wishlist-img">
-                                                            <a asp-controller="product" asp-action="ViewProduct" asp-route-id="@item.Id">
+                                                            <a asp-controller="Product" asp-action="ViewProduct" asp-route-id="@item.Id">
                                                                 <img src="~/assets/img/shop/@item.ImageName" alt="" class="img-fluid">
                                                             </a>
                                                             <a asp-controller="Product" asp-action="RemoveCartWishList" asp-route-id="@item.Id" class="wishlist-delete-btn">

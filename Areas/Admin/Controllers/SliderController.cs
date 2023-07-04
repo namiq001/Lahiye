@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NOOKX_Project.Models;
 using NOOKX_Project.NOOKXDataBase;
+using NOOKX_Project.ViewModels.DashBoardVM;
 using NOOKX_Project.ViewModels.SliderVM;
 using System.Data;
 
@@ -25,8 +26,14 @@ public class SliderController : Controller
 
     public async Task<IActionResult> Index()
     {
+        List<Cantact> cantacts = await _context.Cantacts.ToListAsync();
         List<Slider> sliders = await _context.Sliders.ToListAsync();
-        return View(sliders);
+        DashVM dash = new DashVM
+        {
+            Cantacts = cantacts,
+            Sliders = sliders
+        };
+        return View(dash);
     }
     [HttpGet]
     public IActionResult Create()

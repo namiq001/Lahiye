@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NOOKX_Project.Models;
 using NOOKX_Project.NOOKXDataBase;
+using NOOKX_Project.ViewModels.DashBoardVM;
 using NOOKX_Project.ViewModels.SettingVM;
 using System.Data;
 
@@ -21,8 +22,14 @@ public class SettingController : Controller
 
     public async Task<IActionResult> Index()
     {
+        List<Cantact> cantacts = await _context.Cantacts.ToListAsync();
         List<Setting> settings = await _context.Settings.ToListAsync();
-        return View(settings);
+        DashVM dashVM = new DashVM
+        {
+            Cantacts = cantacts,
+            Settings = settings
+        };
+        return View(dashVM);
     }
     public async Task<IActionResult> Edit(int id)
     {

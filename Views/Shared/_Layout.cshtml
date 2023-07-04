@@ -122,7 +122,11 @@
                     </div>
                     <div class="header-right">
                         <div class="header-search">
-                           
+
+
+                            
+
+
                         </div>
                         <div class="header-details">
                             <div class="header-inner">
@@ -222,18 +226,16 @@
                                             <li><a asp-controller="Product" asp-action="GetCarts">Shop Cart</a></li>
                                             <li><a asp-controller="Product" asp-action="Address">Shop Address</a></li>
                                             <li><a asp-controller="Product" asp-action="Delivery">Shop Delivery</a></li>
-                                            <li><a asp-controller="Product" asp-action="CheckOut">Shop Checkout</a></li>
+                                            <li><a asp-controller="Product" asp-action="GetCarts">Shop Checkout</a></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="#">Pages <i class="fi-rs-angle-down"></i></a>
                                         <ul class="has-submenu">
                                             <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
-                                            <li><a asp-controller="Info" asp-action="Index">My Account</a></li>
-                                            <li><a asp-controller="Account" asp-action="LogIn">Login</a></li>
-                                            <li><a asp-controller="Account" asp-action="Register">Register</a></li>
                                             <li><a asp-controller="Privacy" asp-action="Index">Privacy Policy</a></li>
                                             <li><a asp-controller="Terms" asp-action="Index">Terms of Service</a></li>
+                                            <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -417,13 +419,12 @@
                             <li class="mobile-menu-item">
                                 <a href="#">Pages</a>
                                 <ul class="dropdown">
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="account.html">My Account</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="register.html">Register</a></li>
-                                    <li><a href="contact-us.html">Contact Us</a></li>
-                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="terms-conditions.html">Terms of Service</a></li>
+                                    <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
+                                    <li><a asp-controller="Info" asp-action="Index">My Account</a></li>
+                                    <li><a asp-controller="Account" asp-action="LogIn">Login</a></li>
+                                    <li><a asp-controller="Account" asp-action="Register">Register</a></li>
+                                    <li><a asp-controller="Contact" asp-action="Index" >Contact Us</a></li>
+                                    <li><a asp-controller="Privacy" asp-action="Index">Privacy Policy</a></li>
                                 </ul>
                             </li>
                             <li class="mobile-menu-item">
@@ -511,11 +512,9 @@
                         </div>
                         <div class="col-lg-6 col-md-7">
                             <ul class="footer-list mb-sm-5 mb-md-0">
-                                <li><a href="#">My Orders</a></li>
-                                <li><a href="#">Help</a></li>
-                                <li><a href="#">Site Map</a></li>
-                                <li><a href="about-us.html">About</a></li>
-                                <li><a href="contact-us.html">Contact</a></li>
+                                <li><a asp-controller="Order" asp-action="Index">My Orders</a></li>
+                                <li><a asp-controller="AboutUs" asp-action="Index">About</a></li>
+                                <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
                             </ul>
                         </div>
                     </div>

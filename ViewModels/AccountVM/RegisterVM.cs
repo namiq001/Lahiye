@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NOOKX_Project.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace NOOKX_Project.ViewModels.AccountVM;
 

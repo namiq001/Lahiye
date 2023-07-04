@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NOOKX_Project.Models;
 using NOOKX_Project.NOOKXDataBase;
+using NOOKX_Project.ViewModels.DashBoardVM;
 using NOOKX_Project.ViewModels.ProductVM;
+using NOOKX_Project.ViewModels.SliderVM;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 
@@ -25,7 +27,15 @@ public class ProductController : Controller
     public async Task<IActionResult> Index()
     {
         List<Product> products = await _context.Products.Include(x=>x.Catagories).ToListAsync();
-        return View(products);
+        List<Cantact> cantacts = await _context.Cantacts.ToListAsync();
+
+        DashVM dashVM = new DashVM
+        {
+            Products = products,
+            Cantacts = cantacts,
+        };
+
+        return View(dashVM);
     }
     [HttpGet]
     public async Task<IActionResult> Create()
@@ -115,7 +125,7 @@ public class ProductController : Controller
             editProduct.Catagories = await _context.Catagories.ToListAsync();
             return View(editProduct);
         }
-        if (editProduct.ProductImageUrl is not null)
+        if (editProduct.Image is not null)
         {
             string path = Path.Combine(_environment.WebRootPath, "assets", "img", "shop", product.ProductImageUrl);
             if (System.IO.File.Exists(path))
@@ -135,5 +145,15 @@ public class ProductController : Controller
         _context.Products.Update(product);
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(Index));
+    }
+    public async Task<IActionResult> Detail(int id)
+    {
+        Product? product = await _context.Products.Include(x=>x.Catagories).FirstOrDefaultAsync(x=>x.Id == id);
+        if (product is null)
+        {
+            return NotFound();
+        }
+
+        return View(product);
     }
 }
